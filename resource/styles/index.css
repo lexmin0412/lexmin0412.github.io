@@ -1,8 +1,7 @@
 .index-container .header {
   height: 10rem;
   background: url(../images/header-bg.jpg) no-repeat center / 100% 100%;
-}
-.index-container .header img {
-  width: 100%;
-  height: 100%;
+  text-align: center;
+  line-height: 10rem;
+  color: #fff;
 }
