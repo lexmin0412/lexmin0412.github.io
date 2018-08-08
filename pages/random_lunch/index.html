@@ -12,7 +12,10 @@
 
   <div id="app">
     今天中午吃{{lunchName}}
-    <div class="btn-start" v-bind:class='{active: isActive}' v-on:click="btnClick">
+    <div class="btn-start"
+      v-bind:class='{active: isActive}'
+      v-on:click="btnClick"
+    >
       {{btnText}}
     </div>
   </div>
