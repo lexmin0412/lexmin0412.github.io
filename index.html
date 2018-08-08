@@ -9,8 +9,23 @@
   <link rel="stylesheet" href="./resource/styles/index.css">
 </head>
 <body class="index-container">
-  <div class="header"> 
-    CellerChan's Blog
+  <div class="header">
+    <div class="title">
+      CellerChan's Blog
+    </div>
+    <div class="header-nav">
+      <div class="nav-item" id="random_lunch">今天吃什么</div>
+      <div class="nav-item">前端</div>
+    </div>
   </div>
+
+  <script>
+    window.onload = function(){
+      document.getElementById('random_lunch').onclick = function(){
+        window.location.assign('./pages/random_lunch/index.html')
+      }
+    }
+  </script>
+
 </body>
 </html>
