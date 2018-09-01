@@ -12,6 +12,8 @@
 </head>
 <body>
   <div id="music-index-container">
+
+    <!-- tab -->
     <div class="music-index-tab">
       <div class="newest tab-item"
         v-on:click="getNewestData"
@@ -27,19 +29,38 @@
         占位音乐
       </div>
     </div>
+
+    <!-- banner -->
     <div class="banner">
       <img src="./../../resource/images/header-bg.jpg" />
     </div>
-    <div class="song-list">
 
+    <!-- 列表 -->
+    <div class="song-list">
+      <div class="list-item" v-for="item in displayList">
+        <div class="item-image">
+          <img src="http://wiki.jikexueyuan.com/project/material-design/images/materialdesign-principles-layersquares_large_mdpi.png" />
+        </div>
+        <div class="item-name">
+          {{item.data.songname}}
+        </div>
+        <div class="item-desc">
+          {{item.data.singer[0]['name']}}
+        </div>
+      </div>
     </div>
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#music-index-container',
       data: {
-        newestList: [],
-        recommendList: []
+        displayList: [],
+      },
+      beforeEnter: function() {
+        console.log(111)
+      },
+      enter: function () {
+        console.log(123)
       },
       computed: {
 
@@ -57,9 +78,13 @@
             scriptCharset: 'GBK',//解决中文乱码
             success: function(data){
               console.log(data)
-              this.newestList = data.songlist
-              var _html = '<div>123</div>'
-
+              var data = JSON.parse(JSON.stringify(data))
+              app.displayList = data.songlist
+              setTimeout(() => {
+                document.querySelectorAll('.item-image').forEach(function(item,index){
+                  item.style.height = document.documentElement.clientWidth*0.3 + 'px'
+                })
+              }, 1);
             },
             error:function (e) {
               console.log('error');
@@ -77,6 +102,7 @@
             scriptCharset: 'GBK',//解决中文乱码
             success: function(data){
               // this.newestList = data
+              app.displayList = data.songlist
               //最新音乐数据
             },
             error:function (e) {

@@ -1,3 +1,47 @@
+.container {
+  background-color: #ebebeb;
+}
+.biggar-icon {
+  width: 2rem;
+  height: 2rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+a:active {
+  outline: 0;
+}
+b,
+strong {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+.text-overflow-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 #music-index-container {
   background-color: #fff;
 }
@@ -20,4 +64,37 @@
   height: 10rem;
   margin: -7rem auto 0;
   border-radius: 5px;
+}
+#music-index-container .song-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 1.5%;
+}
+#music-index-container .song-list .list-item {
+  width: 32%;
+  padding-bottom: 1rem;
+}
+#music-index-container .song-list .list-item .item-image {
+  width: 100%;
+}
+#music-index-container .song-list .list-item .item-image img {
+  width: 100%;
+  height: 100%;
+}
+#music-index-container .song-list .list-item .item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+#music-index-container .song-list .list-item .item-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+  font-size: 0.6rem;
+  color: #999;
 }
