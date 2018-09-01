@@ -15,6 +15,7 @@
     </div>
     <div class="header-nav">
       <div class="nav-item" id="random_lunch">今天吃什么</div>
+      <div class="nav-item" id="music_player">音乐</div>
       <div class="nav-item">前端</div>
     </div>
   </div>
@@ -23,6 +24,9 @@
     window.onload = function(){
       document.getElementById('random_lunch').onclick = function(){
         window.location.assign('./pages/random_lunch/index.html')
+      }
+      document.getElementById('music_player').onclick = function(){
+        window.location.assign('./pages/music_player/index.html')
       }
     }
   </script>

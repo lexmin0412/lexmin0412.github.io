@@ -52,11 +52,21 @@ h3 {
 }
 #music-index-container .music-index-tab .tab-item {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 3rem;
   line-height: 3rem;
   font-size: 0.8rem;
   color: #fff;
+}
+#music-index-container .music-index-tab .tab-item span {
+  height: 2rem;
+  line-height: 2rem;
+}
+#music-index-container .music-index-tab .tab-item.active span {
+  border-bottom: 1px solid #fff;
 }
 #music-index-container .banner {
   overflow: hidden;

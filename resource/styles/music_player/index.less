@@ -10,11 +10,24 @@
 
     .tab-item {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       height: 3rem;
       line-height: 3rem;
       font-size: 0.8rem;
       color: #fff;
+
+      span {
+        height: 2rem;
+        line-height: 2rem;
+      }
+      &.active {
+        span {
+          border-bottom: 1px solid #fff;
+        }
+      }
     }
   }
   .banner {

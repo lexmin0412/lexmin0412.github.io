@@ -17,16 +17,27 @@
     <div class="music-index-tab">
       <div class="newest tab-item"
         v-on:click="getNewestData"
+        v-bind:class="[ currentTab == 'newest' ? 'active' : '' ]"
       >
-        最新音乐
+        <span>
+          最新音乐
+        </span>
       </div>
       <div class="recommend tab-item"
         v-on:click="getRecommendData"
+        v-bind:class="[ currentTab == 'recommend' ? 'active' : '' ]"
       >
-        推荐音乐
+        <span>
+          推荐音乐
+        </span>
       </div>
-      <div class="place-holder tab-item">
-        占位音乐
+      <div class="place-holder tab-item"
+        v-on:click="clickPlaceholder"
+        v-bind:class="[ currentTab == 'placeholder' ? 'active' : '' ]"
+      >
+        <span>
+          占位音乐
+        </span>
       </div>
     </div>
 
@@ -55,6 +66,7 @@
       el: '#music-index-container',
       data: {
         displayList: [],
+        currentTab: ''
       },
       beforeEnter: function() {
         console.log(111)
@@ -68,7 +80,7 @@
       methods: {
         // 获取最新音乐
         getNewestData: function(){
-          console.log(123)
+          this.currentTab = 'newest'
           var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923';
           $.ajax({
             url:url,
@@ -93,6 +105,7 @@
         },
         // 获取推荐音乐
         getRecommendData: function(){
+          this.currentTab = 'recommend'
           var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=36&_=1520777874472';
           $.ajax({
             url:url,
@@ -109,6 +122,10 @@
               console.log('error');
             }
           })
+        },
+        clickPlaceholder: function () {
+          this.currentTab = 'placeholder'
+          app.displayList = []
         }
       }
     })
