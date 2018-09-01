@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="./../../resource/styles/common/normalize.css">
+  <link rel="stylesheet" href="./../../resource/styles/music_player/index.css">
+  <script src="./../../lib/jquery/jquery.min.js"></script>
+  <script src="./../../lib/vue/vue.js"></script>
+</head>
+<body>
+  <div id="music-index-container">
+    <div class="music-index-tab">
+      <div class="newest tab-item"
+        v-on:click="getNewestData"
+      >
+        最新音乐
+      </div>
+      <div class="recommend tab-item"
+        v-on:click="getRecommendData"
+      >
+        推荐音乐
+      </div>
+      <div class="place-holder tab-item">
+        占位音乐
+      </div>
+    </div>
+    <div class="banner">
+      <img src="./../../resource/images/header-bg.jpg" />
+    </div>
+    <div class="song-list">
+
+    </div>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#music-index-container',
+      data: {
+        newestList: [],
+        recommendList: []
+      },
+      computed: {
+
+      },
+      methods: {
+        // 获取最新音乐
+        getNewestData: function(){
+          console.log(123)
+          var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923';
+          $.ajax({
+            url:url,
+            type:"get",
+            dataType:'jsonp',
+            jsonp: "jsonpCallback",
+            scriptCharset: 'GBK',//解决中文乱码
+            success: function(data){
+              console.log(data)
+              this.newestList = data.songlist
+              var _html = '<div>123</div>'
+
+            },
+            error:function (e) {
+              console.log('error');
+            }
+          })
+        },
+        // 获取推荐音乐
+        getRecommendData: function(){
+          var url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=36&_=1520777874472';
+          $.ajax({
+            url:url,
+            type:"get",
+            dataType:'jsonp',
+            jsonp: "jsonpCallback",
+            scriptCharset: 'GBK',//解决中文乱码
+            success: function(data){
+              // this.newestList = data
+              //最新音乐数据
+            },
+            error:function (e) {
+              console.log('error');
+            }
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>
