@@ -17,6 +17,7 @@
       <div class="nav-item" id="random_lunch">今天吃什么</div>
       <div class="nav-item" id="music_player">音乐</div>
       <div class="nav-item">前端</div>
+      <div class="nav-item" id="goto_cellerchan">cellerchan</div>
     </div>
   </div>
 
@@ -27,6 +28,9 @@
       }
       document.getElementById('music_player').onclick = function(){
         window.location.assign('./pages/music_player/index.html')
+      }
+      document.getElementById('goto_cellerchan').onclick = function(){
+        window.location.assign('https://cellerchan.github.io/')
       }
     }
   </script>
