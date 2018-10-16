@@ -23,16 +23,74 @@
   </div>
 
   <script>
+
+    var insideLinks = {
+      randomLunch: './random_lunch/index.html',
+      musicPlayer: './music_player/index.html',
+    }
+
+    var friendsLinks = {
+      cellerchanWeb: 'https://cellerchan-web.github.io/',
+      cellerchan: 'https://cellerchan.github.io'
+    }
+
+    var linkEnum = [
+      {
+        sign: 'random_lunch',
+        name: '今天吃什么',
+        url: insideLinks.randomLunch,
+      },
+      {
+        sign: 'music_player',
+        url: insideLinks.musicPlayer,
+        name: '音乐',
+      },
+      {
+        sign: 'goto_cellerchan',
+        name: 'cellerchan',
+        url: friendsLinks.cellerchan
+      },
+      {
+        sign: 'goto_cellerchan_web',
+        name: 'cellerchan_web',
+        url: friendsLinks.cellerchanWeb
+      }
+    ]
+
+    // var linkEnum = {
+    //   'random_lunch': insideLinks.randomLunch,
+    //   'music_player': insideLinks.musicPlayer,
+    //   'goto_cellerchan': friendsLinks.cellerchan,
+    //   'goto_cellerchan_web': friendsLinks.cellerchanWeb
+    // }
+
     window.onload = function(){
-      document.getElementById('random_lunch').onclick = function(){
-        window.location.assign('./pages/random_lunch/index.html')
+
+      // 循环显示页面DOM
+      var linkBox = document.querySelector('.header-nav')
+      var _html = ''
+      for (let i = 0; i < linkEnum.length; i++) {
+        var item = linkEnum[i];
+        _html += '<div class="nav-item" data-url="'+ item.url +'">'+ item.name +'</div>'
       }
-      document.getElementById('music_player').onclick = function(){
-        window.location.assign('./pages/music_player/index.html')
+
+      // 绑定点击事件
+      var navItems = document.querySelectorAll('.nav-item')
+      for ( var i=0; i<navItems.length; i++ ) {
+        var item = navItems[i]
+        item.onclick = function(){
+          console.log(this)
+          var curUrl = this.getAttribute('data-url')
+          window.location.assign(curUrl)
+        }
       }
-      document.getElementById('goto_cellerchan_web').onclick = function(){
-        window.location.assign('https://cellerchan-web.github.io/')
-      }
+
+      // for ( var k in linkEnum ) {
+      //   document.getElementById([k]).onclick = function(e){
+      //     var curId = this.getAttribute('id')
+      //     window.location.assign(linkEnum[curId])
+      //   }
+      // }
     }
   </script>
 
