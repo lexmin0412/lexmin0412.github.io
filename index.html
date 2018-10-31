@@ -14,11 +14,11 @@
       CellerChan's Blog
     </div>
     <div class="header-nav">
-      <div class="nav-item" id="random_lunch">今天吃什么</div>
+      <!-- <div class="nav-item" id="random_lunch">今天吃什么</div>
       <div class="nav-item" id="music_player">音乐</div>
       <div class="nav-item">前端</div>
       <div class="nav-item" id="goto_cellerchan">cellerchan</div>
-      <div class="nav-item" id="goto_cellerchan_web">cellerchan_web</div>
+      <div class="nav-item" id="goto_cellerchan_web">cellerchan_web</div> -->
     </div>
   </div>
 
@@ -57,40 +57,28 @@
       }
     ]
 
-    // var linkEnum = {
-    //   'random_lunch': insideLinks.randomLunch,
-    //   'music_player': insideLinks.musicPlayer,
-    //   'goto_cellerchan': friendsLinks.cellerchan,
-    //   'goto_cellerchan_web': friendsLinks.cellerchanWeb
-    // }
-
     window.onload = function(){
 
-      // 循环显示页面DOM
+      // 在页面显示DOM元素
       var linkBox = document.querySelector('.header-nav')
       var _html = ''
       for (let i = 0; i < linkEnum.length; i++) {
         var item = linkEnum[i];
         _html += '<div class="nav-item" data-url="'+ item.url +'">'+ item.name +'</div>'
       }
+      linkBox.innerHTML = _html
 
-      // 绑定点击事件
+      // 循环DOM元素数组绑定点击事件
       var navItems = document.querySelectorAll('.nav-item')
       for ( var i=0; i<navItems.length; i++ ) {
         var item = navItems[i]
         item.onclick = function(){
           console.log(this)
           var curUrl = this.getAttribute('data-url')
+          console.log(curUrl)
           window.location.assign(curUrl)
         }
       }
-
-      // for ( var k in linkEnum ) {
-      //   document.getElementById([k]).onclick = function(e){
-      //     var curId = this.getAttribute('id')
-      //     window.location.assign(linkEnum[curId])
-      //   }
-      // }
     }
   </script>
 
