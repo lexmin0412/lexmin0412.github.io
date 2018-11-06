@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>newsCenter</title>
+  <link rel="stylesheet" href="./../../resource/styles/common/normalize.css">
+  <link rel="stylesheet" href="./../../resource/styles/news_center/index.css">
+  <script src="./../../lib/jquery/jquery.min.js"></script>
+  <script src="./../../lib/vue/vue.js"></script>
 </head>
 <body>
+  <div>newsCenterPage</div>
 
+  <script>
+    window.onload = function(){
+      $.ajax({
+        url: 'http://v.juhe.cn/toutiao/index?type=top&key=4f19cac29ddbd92f1c2093e859a93809',
+        type: 'get',
+        // data: {
+        //   type: 'top',
+        //   key: '4f19cac29ddbd92f1c2093e859a93809'
+        // },
+        dataType: 'jsonp',
+        success: function(res){
+          console.log(res.data)
+        }
+      })
+    }
+  </script>
 </body>
 </html>
