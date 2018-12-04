@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片编辑模板</title>
+  <script src="./../lib/jquery/jquery.min.js"></script>
+  <script src="./../lib/html2canvas/html2canvas.js"></script>
+  <style>
+    #box {
+      background: url(./../../resource/images/摄影角度.PNG) no-repeat center / 100% 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <input type="file" 
+      id="img-upload"
+    />
+    <img src="" id="base-img"/>
+    <div class="title">
+      <input type="text"
+        class="title-input"
+      >
+    </div>
+    <div class="subText">
+      <input type="text"
+        class="sub-text-input"
+      />
+    </div>
+  </div>
+  <div id="save-btn">保存</div>
+  <img src="" alt="" id="show-img">
+  <script>
+
+    let curImgBase64 = ''
+    window.onload = function(){
+      console.log(html2canvas)
+    }
+
+    $(document).on('change','#img-upload',function(e){
+      console.log(e.target.files)
+
+      const files = e.target.files
+      const file = files[files.length-1]
+      console.log('file',file)
+
+      const img = new Image()
+      img.src = window.URL.createObjectURL(file)
+      console.log('img',img)
+
+      img.onload = () => {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+        const tempFile = ctx.drawImage(img, 0,0,300,150)  // 将图片绘制到canvas画布上
+        const imgSrc = canvas.toDataURL('image/jpg',1)
+        console.log('imgSrc',imgSrc)   // base64位图
+        curImgBase64 = imgSrc
+        
+        $('#base-img').attr('src',imgSrc)
+      }
+      
+    })
+
+    $(document).on('click', '#save-btn', ()=>{
+      console.log(curImgBase64)
+      html2canvas(document.querySelector('#box'),{
+    }).then(function(canvas) {
+      var data = canvas.toDataURL("image/jpeg", 1)
+      $('#show-img').attr('src',data)
+    });
+    })
+  </script>
+</body>
+</html>
