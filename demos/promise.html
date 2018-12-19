@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise demo</title>
+</head>
+<body>
+  <script>
+    window.onload = function(){
+
+      // promise构造函数要求传入一个函数，并带有resolve和reject参数，这是两个用于结束promise等待的函数，对应的状态分别为成功和失败。
+
+      const p1 = new Promise((resolve, reject)=>{
+        let randomNum = Math.random()
+        setTimeout(() => {
+          if ( randomNum < 1 ) {
+            resolve('123')
+          }
+          else {
+            reject('123')
+          }
+        }, randomNum);
+      })
+      p1.then(function(res){
+        console.log(res)
+      }).catch(function(reason){
+        console.log(reason)
+      })
+
+
+      // 应用promise处理ajax请求
+      function ajax (method, url, data) {
+        var request = new XMLHttpRequest()
+        return new Promise(function(resolve, reject){
+          request.onreadystatechange = () => {
+            if ( request.readyState === 4 ) {
+              if ( request.status === 200 ) {
+                resolve(request.responseText)
+              }
+              else {
+                reject(request.status)
+              }
+            }
+          }
+          request.open(method, url)
+          request.send(data)
+        })
+      }
+
+      // 判断数据类型
+      const judgeDataType = ( data ) => {
+        return new Promise((resolve, reject)=>{
+          if ( typeof data == 'object' ) {
+            resolve(data)
+          }
+          else {
+            reject('data is not a object')
+          }
+        })
+      }
+
+      ajax( 'POST', 'https://...', {} )
+        .then(judgeDataType(data))
+        .then((data)=>{
+          console.log('得到的数据是对象，进行之后的操作')
+        })
+        .catch((status)=>{
+          console.log('失败返回状态',status)
+        })
+      
+      // 可用于链式动画处理
+    }
+  </script>
+</body>
+</html>
