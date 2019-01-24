@@ -12,6 +12,7 @@
   <div id="app">  
     app
   </div>
+  <div id="save">保存</div>
   <video></video>
   <script>
     window.onload = function(){
@@ -31,6 +32,24 @@
           };
         })
         .catch(function(err) { alert(err.name + ": " + err.message); })
+      }
+      document.getElementById('save').onclick = function(){
+        var video = document.querySelector('video')
+        // 通过canvas捕捉video流，生成base64格式图片
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = 1366;
+        canvas.height = 768;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        download(canvas.toDataURL('image/jpeg'));
+        // 下载图片
+        function download (src) {
+            if (!src) return;
+            const a = document.createElement('a');
+            a.setAttribute('download', new Date());
+            a.href = src;
+            a.click();
+        }
       }
     }
   </script>
