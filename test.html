@@ -15,8 +15,10 @@
   <video></video>
   <script>
     window.onload = function(){
+      var front = false
       document.getElementById('app').onclick = function(){
-        const constraints = {audio: true, video: true}
+        front = !front;
+        const constraints = {audio: true, video: { facingMode: (front? "user" : "environment") }}
         navigator.mediaDevices.getUserMedia(constraints)
         .then(function(mediaStream) {
           alert(222222222)
