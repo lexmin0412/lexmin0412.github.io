@@ -9,5 +9,17 @@
 <body>
   取色器
   <input type="color">
+  <div id="app">  
+    app
+  </div>
+  <script>
+    window.onload = function(){
+      document.getElementById('app').onclick = function(){
+        const constraints = {audio: true, video: true}
+        var promise = navigator.mediaDevices.getUserMedia(constraints);
+        console.log(promise)
+      }
+    }
+  </script>
 </body>
 </html>
