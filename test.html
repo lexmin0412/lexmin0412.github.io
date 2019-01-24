@@ -16,8 +16,17 @@
     window.onload = function(){
       document.getElementById('app').onclick = function(){
         const constraints = {audio: true, video: true}
-        var promise = navigator.mediaDevices.getUserMedia(constraints);
-        console.log(promise)
+        navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(mediaStream) {
+          alert(222222222)
+          var video = document.querySelector('video');
+          video.srcObject = mediaStream;
+          video.onloadedmetadata = function(e) {
+            alert(111111111)
+            video.play();
+          };
+        })
+        .catch(function(err) { alert(err.name + ": " + err.message); })
       }
     }
   </script>
