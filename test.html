@@ -18,7 +18,8 @@
       var front = false
       document.getElementById('app').onclick = function(){
         front = !front;
-        const constraints = {audio: true, video: { facingMode: (front? "user" : "environment") }}
+        // const constraints = {audio: true, video: { facingMode: (front? "user" : "environment") }}
+        const constraints = {audio: true, video: { facingMode: "environment" }}
         navigator.mediaDevices.getUserMedia(constraints)
         .then(function(mediaStream) {
           alert(222222222)
