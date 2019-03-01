@@ -8,7 +8,7 @@
 > - 运算符两侧要保留一个空格，否则无法识别，如：`width: calc(100vh - 50px)`
 > - 支持加减乘除
 
-[示例：calc函数应用]('./demos/index-01-calc函数.html')
+[示例：calc函数应用]('demos/index-01-calc函数.html')
 ```html
 <style>
   #test {
