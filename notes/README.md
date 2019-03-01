@@ -24,3 +24,16 @@
   测试
 </div>
 ```
+
+## IOS兼容
+
+### 1. 日期格式
+
+> `YYYY-MM-DD HH:mm:ss` 的格式ios端无法正确识别，需要调整为 `YYYY/MM/DD HH:mm:ss`
+
+### 2. 键盘收起页面高度不恢复
+
+> 解决方案：输入框失去焦点时滚动页面
+```javascript
+window.scrollTo(0, 0)
+```
