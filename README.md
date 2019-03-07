@@ -1,3 +1,5 @@
 ### Personal Website
 
-<!-- [tech stack]() -->
+[tech stack](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/tech-stack)
+
+[notes](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes)
