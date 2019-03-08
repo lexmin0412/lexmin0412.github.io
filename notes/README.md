@@ -37,3 +37,18 @@
 ```javascript
 window.scrollTo(0, 0)
 ```
+
+### 3. input标签设置readOnly属性仍会显示光标
+
+>解决方案：输入框聚焦时手动失焦
+```html
+<input type="text"
+  readOnly
+  onFocus={this.blur}
+/>
+```
+```javascript
+blur = (e) => {
+  e.target.blur()
+}
+```
