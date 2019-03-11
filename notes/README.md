@@ -5,3 +5,5 @@
 [ES6+](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes/ES6%2B)
 
 [npm_publish_guide](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes/npm_publish_guide)
+
+[git](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes/git)
