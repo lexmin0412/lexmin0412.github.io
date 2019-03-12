@@ -79,3 +79,6 @@ const {
 > 参数：同 `promise.all(iteralble)`
 
 > 返回值：返回一个promise，一旦迭代器中的某个promise解决或拒绝，就采用第一个promise的值作为它的值，从而异步地解析或拒绝。
+
+- `Promise.resolve()`
+- `Promise.reject()`
