@@ -25,3 +25,5 @@ console.log(passed)  // false
 passed = [ 7, 8, 10 ].some(isBigEnough)
 console.log(passed)  // true
 ```
+
+- reduce
