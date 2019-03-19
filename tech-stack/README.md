@@ -17,6 +17,7 @@
     - ##### 服务端渲染
     - ##### [Nginx](http://www.nginx.cn/doc/)
   - #### MiniProgram
+  - #### Taro
   - #### Angular
   - #### Redux
     - ##### [Dva](https://dvajs.com/guide/)
