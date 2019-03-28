@@ -52,3 +52,5 @@ blur = (e) => {
   e.target.blur()
 }
 ```
+
+### 4. ios中onKeyup事件的兼容性问题，待完善。
