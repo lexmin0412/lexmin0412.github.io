@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import { AtNavBar } from 'taro-ui'
 import './index.scss'
 
 export default class Index extends Component {
@@ -22,7 +22,16 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index-container'>
-        <Button>按钮</Button>
+        <AtNavBar
+          onClickRgIconSt={this.handleClick}
+          // onClickRgIconNd={this.handleClick}
+          onClickLeftIcon={this.handleClick}
+          color='#000'
+          title='NavBar 导航栏示例'
+          leftText='返回'
+          rightFirstIconType='bullet-list'
+          // rightSecondIconType='user'
+        />
       </View>
     )
   }

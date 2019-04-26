@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 
+import 'taro-ui/dist/style/index.scss'
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -13,7 +14,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/others/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -37,23 +39,9 @@ class App extends Component {
 					iconPath: 'assets/images/mc_lable_home_default@2x.png',
 					selectedIconPath:
 						'assets/images/mc_lable_home_selected@2x.png',
-					pagePath: 'pages/index/index',
-					text: '首页'
+					pagePath: 'pages/others/index',
+					text: '其他'
 				},
-				// {
-				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_gwc_defaule@2x.png',
-				// 	selectedIconPath:
-				// 		'assets/images/icon/tabBar/mc_lable_gwc_selected@2x.png',
-				// 	pagePath: 'pages/buy/cart',
-				// 	text: '购物车'
-				// },
-				// {
-				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-				// 	selectedIconPath:
-				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-				// 	pagePath: 'pages/userCenter/index',
-				// 	text: '我的'
-				// }
 			]
 		}
   }
