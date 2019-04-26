@@ -5,5 +5,10 @@ module.exports = {
   defineConstants: {
   },
   weapp: {},
-  h5: {}
+	h5: {
+		devServer: {
+			host: 'localhost',
+			port: 10086
+		}
+	}
 }

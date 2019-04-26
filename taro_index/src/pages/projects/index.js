@@ -28,7 +28,13 @@ const linkEnum = [
     sign: 'goto_notes',
     name: 'notes',
     url: `https://github.com/cathe-zhang/Notes`
-  }
+  },
+  {
+    type: 'taro',
+    sign: 'music_player',
+    url: `/pages/projects/music_player/index`,
+    name: 'taro音乐播放器',
+  },
 ]
 
 class Index extends Component {
@@ -48,8 +54,20 @@ class Index extends Component {
   componentDidCatchError () {} 
   componentDidNotFound () {} 
 
-  handleClick = (url) => {
-    window.location.href = url
+  /**
+   * listItem点击事件
+   * @param url 跳转链接/路由
+   * @param type 项目类型 String taro-taro项目 默认普通项目
+   */
+  handleClick = (url, type) => {
+    if ( type === 'taro' ) {
+      Taro.navigateTo({
+        url: url
+      })
+    }
+    else {
+      window.location.href = url
+    }
   }
   
   render() {
@@ -59,7 +77,7 @@ class Index extends Component {
           {
             linkEnum.map((item,index)=>{
               return (
-                <AtListItem title={item.name} arrow='right' onClick={()=>this.handleClick(item.url)} />
+                <AtListItem title={item.name} arrow='right' onClick={()=>this.handleClick(item.url, item.type)} />
               )
             })
           }

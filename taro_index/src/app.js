@@ -17,6 +17,7 @@ class App extends Component {
       'pages/index/index',
       'pages/others/index',
       'pages/projects/index',
+      'pages/projects/music_player/index',
     ],
     window: {
       backgroundTextStyle: 'light',
