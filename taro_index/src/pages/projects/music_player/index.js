@@ -32,14 +32,15 @@ class Index extends Component {
   render() {
     return (
       <View>
-        {
+        {/* {
           this.state.playlist &&
           this.state.playlist.map((item,index)=>{
             return (
               <AtListItem title={'sdfsfd'} arrow='right' onClick={()=>this.handleClick(item.url, item.type)} />
             )
           })
-        }
+        } */}
+        <AtListItem title={'sdfsfd'} arrow='right' />
       </View>
     );
   }
