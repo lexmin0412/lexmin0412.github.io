@@ -18,6 +18,8 @@ class App extends Component {
       'pages/others/index',
       'pages/projects/index',
       'pages/projects/music_player/index',
+      'pages/projects/juejin/index',
+      'pages/projects/news/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -45,11 +47,11 @@ class App extends Component {
 					text: '其他'
 				},
 				{
-					iconPath: 'assets/images/mc_lable_home_default@2x.png',
+					iconPath: 'assets/images/mc_lable_my_default@2x.png',
 					selectedIconPath:
-						'assets/images/mc_lable_home_selected@2x.png',
+						'assets/images/mc_lable_my_selected@2x.png',
 					pagePath: 'pages/projects/index',
-					text: '项目'
+					text: '我的'
 				},
 			]
 		}
