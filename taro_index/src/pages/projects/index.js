@@ -35,6 +35,18 @@ const linkEnum = [
     url: `/pages/projects/music_player/index`,
     name: 'taro音乐播放器',
   },
+  {
+    type: 'taro',
+    sign: 'juejin',
+    url: `/pages/projects/juejin/index`,
+    name: '掘金',
+  },
+  {
+    type: 'taro',
+    sign: 'news',
+    url: `/pages/projects/news/index`,
+    name: '新闻',
+  },
 ]
 
 class Index extends Component {
