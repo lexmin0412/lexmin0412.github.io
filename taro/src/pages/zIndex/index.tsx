@@ -80,7 +80,9 @@ class Index extends Component {
     const { counterStore: { counter } } = this.props
     return (
       <View className='index-container'>
-        <AtSearchBar />
+        <View className="search-bar">
+          <AtSearchBar />
+        </View>
         {
           this.state.list && this.state.list.length > 0 ?
           <View className="list">

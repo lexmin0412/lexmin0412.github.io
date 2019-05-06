@@ -22,7 +22,16 @@
 }
 
 .index-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 106px);
+  
+  .search-bar {
+    height: 84px;
+  }
   .list {
+    flex: 1;
+    overflow: auto;
     .item {
       display: flex;
       align-items: flex-start;
