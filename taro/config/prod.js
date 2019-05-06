@@ -6,9 +6,9 @@ module.exports = {
   },
   weapp: {},
   h5: {
-    publicPath: '/taro_zhihu/dist/',
+    publicPath: '/taro/dist/',
     router: {
-			basename: '/taro_zhihu/dist/', // 关注点2
+			basename: '/taro/dist/', // 关注点2
 			mode: 'browser', // 或者是 'hash'
 			customRoutes: {}
 		}
