@@ -34,6 +34,7 @@ class App extends Component {
       'pages/university/index',
       'pages/notice/index',
       'pages/users/index',
+      'pages/recommend/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -54,33 +55,33 @@ class App extends Component {
 					text: '首页'
 				},
 				{
-					iconPath: 'assets/images/icon/tabBar/mc_lable_gwc_defaule@2x.png',
+					iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
 					selectedIconPath:
-						'assets/images/icon/tabBar/mc_lable_gwc_selected@2x.png',
-					pagePath: 'pages/thought/index',
-					text: '想法'
+						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
+					pagePath: 'pages/recommend/index',
+					text: '为你推荐'
 				},
-				{
-					iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-					selectedIconPath:
-						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-					pagePath: 'pages/university/index',
-					text: '大学'
-        },
-        {
-					iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-					selectedIconPath:
-						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-					pagePath: 'pages/notice/index',
-					text: '通知'
-        },
-        {
-					iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-					selectedIconPath:
-						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-					pagePath: 'pages/users/index',
-					text: '我的'
-				}
+				// {
+				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
+				// 	selectedIconPath:
+				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
+				// 	pagePath: 'pages/university/index',
+				// 	text: '大学'
+        // },
+        // {
+				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
+				// 	selectedIconPath:
+				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
+				// 	pagePath: 'pages/notice/index',
+				// 	text: '通知'
+        // },
+        // {
+				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
+				// 	selectedIconPath:
+				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
+				// 	pagePath: 'pages/users/index',
+				// 	text: '我的'
+				// }
 			]
 		}
   }
