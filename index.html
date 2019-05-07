@@ -22,9 +22,14 @@
       <div class="nav-item" id="goto_cellerchan">cellerchan</div>
       <div class="nav-item" id="goto_cellerchan_web">cellerchan_web</div> -->
     </div>
+    <button onclick="jumpToZhihu()">跳转taro知乎demo</button>
   </div>
 
   <script>
+
+    function jumpToZhihu() {
+      window.open('https://cathe-zhang.github.io/taro/dist')
+    }
 
 
 
@@ -69,8 +74,7 @@
 
     window.onload = function(){
 
-
-      window.location.href = './taro_index/dist'
+      // window.location.href = './taro_index/dist'
 
       // 在页面显示DOM元素
       var linkBox = document.querySelector('.header-nav')

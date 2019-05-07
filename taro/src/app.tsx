@@ -28,7 +28,6 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      // 'pages/index/index',
       'pages/zIndex/index',
       'pages/thought/index',
       'pages/university/index',
@@ -61,27 +60,6 @@ class App extends Component {
 					pagePath: 'pages/recommend/index',
 					text: '为你推荐'
 				},
-				// {
-				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-				// 	selectedIconPath:
-				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-				// 	pagePath: 'pages/university/index',
-				// 	text: '大学'
-        // },
-        // {
-				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-				// 	selectedIconPath:
-				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-				// 	pagePath: 'pages/notice/index',
-				// 	text: '通知'
-        // },
-        // {
-				// 	iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
-				// 	selectedIconPath:
-				// 		'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
-				// 	pagePath: 'pages/users/index',
-				// 	text: '我的'
-				// }
 			]
 		}
   }
