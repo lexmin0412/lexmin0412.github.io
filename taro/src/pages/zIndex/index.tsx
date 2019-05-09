@@ -1,9 +1,8 @@
 import { ComponentType } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Text, ScrollView } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { AtSearchBar } from 'taro-ui'
-import { AtListItem } from 'taro-ui'
 
 import './index.less'
 
@@ -35,6 +34,10 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
+  state = {
+    list: []
+  }
+
   componentWillMount () { }
 
   componentWillReact () {
@@ -42,6 +45,11 @@ class Index extends Component {
   }
 
   componentDidMount () { 
+    this.queryDataList()
+  }
+
+  // 获取数据列表
+  queryDataList = () => {
     const self = this
     Taro.request({
       method: 'POST',
@@ -49,31 +57,21 @@ class Index extends Component {
       success: function(res){
         console.log(res);
         self.setState({
-          list: res.data.data.list
+          list: self.state.list.concat(res.data.data.list)
         })
       }
-    }).then()
+    })
   }
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  increment = () => {
-    const { counterStore } = this.props
-    counterStore.increment()
+  // scrollview 滚动
+  onScroll = () => {
+    console.log('scroll');
   }
 
-  decrement = () => {
-    const { counterStore } = this.props
-    counterStore.decrement()
-  }
-
-  incrementAsync = () => {
-    const { counterStore } = this.props
-    counterStore.incrementAsync()
+  // scrollView滚动到底部
+  scrollToBottom = () => {
+    console.log('滚动到底部');
+    this.queryDataList()
   }
 
   render () {
@@ -83,32 +81,42 @@ class Index extends Component {
         <View className="search-bar">
           <AtSearchBar />
         </View>
-        {
-          this.state.list && this.state.list.length > 0 ?
-          <View className="list">
-            {
-              this.state.list.map((item,index)=>{
-                return (
-                  <View className="item">
-                    <View className="left">
-                      <View className="index"></View>
-                      <View className="main">
-                        <View className="title">
-                          {item.title}
+
+        <ScrollView
+          className='scrollview'
+          scrollY
+          scrollWithAnimation
+          lowerThreshold={50}
+          onScroll={this.onScroll}
+          onScrollToLower={this.scrollToBottom}
+        >
+          {
+            this.state.list && this.state.list.length > 0 ?
+            <View className="list">
+              {
+                this.state.list.map((item,index)=>{
+                  return (
+                    <View className="item">
+                      <View className="left">
+                        <View className="index"></View>
+                        <View className="main">
+                          <View className="title">
+                            {item.title}
+                          </View>
+                          <View className="hot">{item.hot}热度</View>
                         </View>
-                        <View className="hot">{item.hot}热度</View>
+                      </View>
+                      <View className="image">
+                        
                       </View>
                     </View>
-                    <View className="image">
-                      
-                    </View>
-                  </View>
-                )
-              })
-            }
-          </View>
-          :null
-        }
+                  )
+                })
+              }
+            </View>
+            :null
+          }
+        </ScrollView>
       </View>
     )
   }
