@@ -34,6 +34,8 @@ class App extends Component {
       'pages/notice/index',
       'pages/users/index',
       'pages/recommend/index',
+      'pages/widgets/index',
+      'pages/widgets/listItem/cartItem',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -59,6 +61,13 @@ class App extends Component {
 						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
 					pagePath: 'pages/recommend/index',
 					text: '为你推荐'
+        },
+        {
+					iconPath: 'assets/images/icon/tabBar/mc_lable_my_defaule@2x.png',
+					selectedIconPath:
+						'assets/images/icon/tabBar/mc_lable_my_selected@2x.png',
+					pagePath: 'pages/widgets/index',
+					text: 'taro组件'
 				},
 			]
 		}
