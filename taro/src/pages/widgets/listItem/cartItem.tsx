@@ -2,6 +2,7 @@ import Taro , { Component } from '@tarojs/taro';
 import { View, Text , Button} from '@tarojs/components';
 import CartItem from './../../../widgets/listItem/cartItem'
 import { AtNavBar } from 'taro-ui'
+import './cartItem.less'
 
 class Index extends Component {
 
