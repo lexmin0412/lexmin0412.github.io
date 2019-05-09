@@ -1,3 +1,5 @@
+const path = require('path');
+
 const config = {
   projectName: 'zhihu',
   date: '2019-5-6',
@@ -7,6 +9,20 @@ const config = {
     '750': 1,
     '828': 1.81 / 2
   },
+	alias: {
+    '~/': path.resolve(__dirname, '..', 'src/'),
+		'~/assets': path.resolve(__dirname, '..', 'src/assets'),
+		'~/pages': path.resolve(__dirname, '..', 'src/pages'),
+		'~/widgets': path.resolve(__dirname, '..', 'src/widgets'),
+		'~/config': path.resolve(__dirname, '..', 'src/config'),
+		'~/constants': path.resolve(__dirname, '..', 'src/constants'),
+		'~/enums': path.resolve(__dirname, '..', 'src/enums'),
+		'~/interceptors': path.resolve(__dirname, '..', 'src/interceptors'),
+		'~/interfaces': path.resolve(__dirname, '..', 'src/interfaces'),
+		'~/models': path.resolve(__dirname, '..', 'src/models'),
+		'~/services': path.resolve(__dirname, '..', 'src/services'),
+		'~/utils': path.resolve(__dirname, '..', 'src/utils'),
+	},
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: {
