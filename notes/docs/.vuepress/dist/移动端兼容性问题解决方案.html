@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ios手机webview无法识别 window.open 方法</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.3e1d0bd1.css" as="style"><link rel="preload" href="/assets/js/app.ce737195.js" as="script"><link rel="preload" href="/assets/js/20.94099e5f.js" as="script"><link rel="prefetch" href="/assets/js/10.e01dbe11.js"><link rel="prefetch" href="/assets/js/11.53717cb5.js"><link rel="prefetch" href="/assets/js/12.3f9ed87c.js"><link rel="prefetch" href="/assets/js/13.7bf1f131.js"><link rel="prefetch" href="/assets/js/14.e2b96be0.js"><link rel="prefetch" href="/assets/js/15.30846797.js"><link rel="prefetch" href="/assets/js/16.8cd19b43.js"><link rel="prefetch" href="/assets/js/17.ac4a1e7a.js"><link rel="prefetch" href="/assets/js/18.b479e2cd.js"><link rel="prefetch" href="/assets/js/19.aaca5ac2.js"><link rel="prefetch" href="/assets/js/2.a3e62f69.js"><link rel="prefetch" href="/assets/js/21.1b0873d7.js"><link rel="prefetch" href="/assets/js/22.b8e993d8.js"><link rel="prefetch" href="/assets/js/23.865b0ffa.js"><link rel="prefetch" href="/assets/js/3.6ba2bcd8.js"><link rel="prefetch" href="/assets/js/4.4dd7d3bc.js"><link rel="prefetch" href="/assets/js/5.e9599624.js"><link rel="prefetch" href="/assets/js/6.19f3fff9.js"><link rel="prefetch" href="/assets/js/7.bd874e61.js"><link rel="prefetch" href="/assets/js/8.09ac1fb0.js"><link rel="prefetch" href="/assets/js/9.6637a21c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3e1d0bd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h4 id="ios手机webview无法识别-window-open-方法"><a href="#ios手机webview无法识别-window-open-方法" aria-hidden="true" class="header-anchor">#</a> ios手机webview无法识别 <code>window.open</code> 方法</h4> <p>解决方案：
+使用 <code>window.location.href=&quot;xxx&quot;</code> 代替</p> <h4 id="ios无法正确识别yyyy-mm-dd-hh-mm-ss为正确的时间格式"><a href="#ios无法正确识别yyyy-mm-dd-hh-mm-ss为正确的时间格式" aria-hidden="true" class="header-anchor">#</a> ios无法正确识别<code>YYYY-MM-DD HH:mm:ss</code>为正确的时间格式</h4> <p>解决方案：
+使用 <code>YYYY/MM/DD HH:mm:ss</code> 代替</p> <h4 id="ios端input标签设置readonly属性仍会显示光标"><a href="#ios端input标签设置readonly属性仍会显示光标" aria-hidden="true" class="header-anchor">#</a> ios端input标签设置readOnly属性仍会显示光标</h4> <p>解决方案：
+输入框聚焦时手动失焦</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">readOnly</span>
+  <span class="token attr-name">onFocus</span><span class="token attr-value"><span class="token punctuation">=</span>{this.blur}</span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token function-variable function">blur</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">blur</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="输入框输入完毕后键盘收起，页面高度无法恢复"><a href="#输入框输入完毕后键盘收起，页面高度无法恢复" aria-hidden="true" class="header-anchor">#</a> 输入框输入完毕后键盘收起，页面高度无法恢复</h4> <p>解决方案：
+输入框失去焦点时滚动页面</p> <div class="language- extra-class"><pre class="language-text"><code>window.scrollTo(0, 0)
+</code></pre></div><h4 id="ios手机onkeyup最后一次输入只能监听到输入的拼音字母而不是选择的文字问题"><a href="#ios手机onkeyup最后一次输入只能监听到输入的拼音字母而不是选择的文字问题" aria-hidden="true" class="header-anchor">#</a> ios手机onKeyup最后一次输入只能监听到输入的拼音字母而不是选择的文字问题</h4> <p>解决方案：
+使用 <code>onChange</code> 事件代替</p> <h4 id="ios端当页面高度不足时，使用固定定位到底部的元素会被遮住-页面往上拉会遮挡固定定位的元素"><a href="#ios端当页面高度不足时，使用固定定位到底部的元素会被遮住-页面往上拉会遮挡固定定位的元素" aria-hidden="true" class="header-anchor">#</a> ios端当页面高度不足时，使用固定定位到底部的元素会被遮住 / 页面往上拉会遮挡固定定位的元素</h4> <blockquote><p>备注：webview中尽量不要用固定定位，在ios端会有许多问题。
+解决方案1：
+父元素相对定位并设置为屏幕高度，子元素绝对定位</p></blockquote> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>container<span class="token punctuation">'</span></span> <span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>bottom<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+		底部按钮
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>View</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>View</span> <span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #45aafa<span class="token selector">;
+  
+  .bottom</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #ffe400<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>解决方案2：</p> <blockquote><p>使用弹性布局，父元素设为屏幕高度，列表设置flex: 1</p></blockquote> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>container<span class="token punctuation">'</span></span> <span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>list<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+		列表
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>View</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>View</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>bottom<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+		底部按钮
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>View</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>View</span> <span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token selector">;
+
+  .list</span> <span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="ios手机滑动不跟手"><a href="#ios手机滑动不跟手" aria-hidden="true" class="header-anchor">#</a> ios手机滑动不跟手</h4> <p>解决方案：</p> <div class="language- extra-class"><pre class="language-text"><code>-webkit-overflow-scrolling: touch;
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.ce737195.js" defer></script><script src="/assets/js/20.94099e5f.js" defer></script>
+  </body>
+</html>
