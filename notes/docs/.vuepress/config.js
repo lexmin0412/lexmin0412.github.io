@@ -2,7 +2,7 @@ module.exports = {
   title: 'CellerChan Blog',
   description: 'All I know is that I know nothing.',
   themeConfig : {
-    // base: "/",
+    base: "/docs",
     repo: 'vuejs/vuepress',
     nav : [
         { text: 'taro相关', link: '/Taro/Taro踩坑指南.md' },
