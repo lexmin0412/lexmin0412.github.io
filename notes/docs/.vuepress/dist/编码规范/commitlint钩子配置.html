@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>配置commitlint | CellerChan Blog</title>
+    <meta name="description" content="All I know is that I know nothing.">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.3e1d0bd1.css" as="style"><link rel="preload" href="/assets/js/app.125ac6f0.js" as="script"><link rel="preload" href="/assets/js/21.1b0873d7.js" as="script"><link rel="prefetch" href="/assets/js/10.e01dbe11.js"><link rel="prefetch" href="/assets/js/11.53717cb5.js"><link rel="prefetch" href="/assets/js/12.3f9ed87c.js"><link rel="prefetch" href="/assets/js/13.7bf1f131.js"><link rel="prefetch" href="/assets/js/14.e2b96be0.js"><link rel="prefetch" href="/assets/js/15.30846797.js"><link rel="prefetch" href="/assets/js/16.8cd19b43.js"><link rel="prefetch" href="/assets/js/17.ac4a1e7a.js"><link rel="prefetch" href="/assets/js/18.b479e2cd.js"><link rel="prefetch" href="/assets/js/19.aaca5ac2.js"><link rel="prefetch" href="/assets/js/2.a3e62f69.js"><link rel="prefetch" href="/assets/js/20.94099e5f.js"><link rel="prefetch" href="/assets/js/22.b8e993d8.js"><link rel="prefetch" href="/assets/js/23.865b0ffa.js"><link rel="prefetch" href="/assets/js/3.6ba2bcd8.js"><link rel="prefetch" href="/assets/js/4.4dd7d3bc.js"><link rel="prefetch" href="/assets/js/5.e9599624.js"><link rel="prefetch" href="/assets/js/6.19f3fff9.js"><link rel="prefetch" href="/assets/js/7.bd874e61.js"><link rel="prefetch" href="/assets/js/8.09ac1fb0.js"><link rel="prefetch" href="/assets/js/9.6637a21c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3e1d0bd1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">CellerChan Blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Taro/Taro踩坑指南.html" class="nav-link">taro相关</a></div><div class="nav-item"><a href="/ES6+/1. 解构.html" class="nav-link">ES6</a></div> <a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Taro/Taro踩坑指南.html" class="nav-link">taro相关</a></div><div class="nav-item"><a href="/ES6+/1. 解构.html" class="nav-link">ES6</a></div> <a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Git相关</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/Git相关/git报错的解决方案.html" class="sidebar-link">执行git pull时报错：There is no tracking information for the current branch.</a></li><li><a href="/Git相关/git提交日志规范.html" class="sidebar-link">/Git相关/git提交日志规范.html</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>npm相关</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>React相关</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>npm相关</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="配置commitlint"><a href="#配置commitlint" aria-hidden="true" class="header-anchor">#</a> 配置commitlint</h1> <ol><li>安装 <code>commitlint</code> 和 <code>husky</code> 依赖</li></ol> <div class="language-cmd extra-class"><pre class="language-text"><code>npm install --save-dev @commitlint/config-conventional @commitlint/cli
+npm install --save-dev husky
+</code></pre></div><ol start="2"><li>新建 <code>commitlint.config.js</code> 文件</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">extends</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'@commitlint/config-conventional'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>@commitlint/config-conventional</code>提供了官方的规则扩展：</p> <div class="language- extra-class"><pre class="language-text"><code>build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
+ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
+docs：文档更新
+feat：新增功能
+merge：分支合并 Merge branch ? of ?
+fix：bug 修复
+perf：性能, 体验优化
+refactor：重构代码(既没有新增功能，也没有修复 bug)
+style：不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)
+test：新增测试用例或是更新现有测试
+revert：回滚某个更早之前的提交
+chore：不属于以上类型的其他类型
+</code></pre></div><ol start="3"><li>配置 <code>package.json</code> 文件
+添加husky字段：</li></ol> <div class="language-cmd extra-class"><pre class="language-text"><code>&quot;husky&quot;: {
+  &quot;hooks&quot;: {
+    &quot;commit-msg&quot;: &quot;commitlint -e $HUSKY_GIT_PARAMS&quot;
+  }
+},
+</code></pre></div><ol start="4"><li>测试</li></ol> <div class="language-git extra-class"><pre class="language-git"><code>git add .
+git commit -m <span class="token string">&quot;foo: this will fail&quot;</span>
+</code></pre></div><blockquote><p><a href="https://segmentfault.com/a/1190000015798675?utm_source=tag-newest" target="_blank" rel="noopener noreferrer">参考<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.125ac6f0.js" defer></script><script src="/assets/js/21.1b0873d7.js" defer></script>
+  </body>
+</html>

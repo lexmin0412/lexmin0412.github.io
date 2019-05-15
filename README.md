@@ -1,15 +1,14 @@
-# cathe-zhang.github.io
-my personal website
-### 个人博客
+# 我的个人网站
 
-### Logs
+> ### 计划，一定要®计划，它可以帮你免除很多不必要的麻烦。
+> ### 永远不要抱有依赖别人的侥幸心理，工作中的信任是不可靠的。
 
-v0.0.1
-- 添加公用样式文件
-- 主页显示文字
+### Personal Website
 
-v0.0.2 2018-08-07
-- 添加今天吃什么模块（vue）
+[tech stack](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/tech-stack)
 
-v0.0.3 2018-09-01
-- 添加音乐模块（vue+jquery）
+[notes](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes)
+
+[markdown syntax](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/markdown-syntax)
+
+[npm publish guide](https://github.com/cathe-zhang/cathe-zhang.github.io/tree/master/notes/npm_publish_guide)
