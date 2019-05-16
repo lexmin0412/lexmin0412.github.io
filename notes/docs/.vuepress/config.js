@@ -1,8 +1,8 @@
-module.exports = {
+module.exports = {  
   title: 'CellerChan Blog',
   description: 'All I know is that I know nothing.',
   themeConfig : {
-    base: "/docs",
+    base: "/notes/",
     repo: 'vuejs/vuepress',
     nav : [
         { text: 'taro相关', link: '/Taro/Taro踩坑指南.md' },
