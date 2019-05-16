@@ -1,0 +1,20 @@
+.index-container {
+  height: 100vh;
+  background-color: #fff;
+}
+.index-container .list .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 20px;
+  line-height: 88px;
+}
+.index-container .list .list-item .title {
+  font-size: 32px;
+}
+.index-container .list .list-item .arrow {
+  font-family: 'consolas';
+  font-size: 28px;
+}
